@@ -1,7 +1,7 @@
 {
 
   "scripts": {
-    "gen:icons": "pwa-asset-generator ./brand/logo.svg ./public/assets --manifest ./public/manifest.webmanifest --index ./public/index.html --path /assets --padding 1% --background #111827",
+    "gen:icons": "pwa-asset-generator ./brand/logo.svg docs/assets --manifest ./public/manifest.webmanifest --index docs/index.html --path /assets --padding 1% --background #111827",
     "gen:og": "node scripts/generate-og.mjs",
     "gen:assets": "npm run gen:icons && npm run gen:og"
   },
