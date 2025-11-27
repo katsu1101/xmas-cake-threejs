@@ -233,7 +233,11 @@ function positionOrnamentsOnCake() {
         cakeTopY + creamHeight + ornamentLift,
         ornamentZ
       );
-      ornament.lookAt(new THREE.Vector3(0, cakeTopY + creamHeight + ornamentLift, 0));
+      ornament.lookAt(new THREE.Vector3(
+        ornamentX * 2,
+        cakeTopY + creamHeight + ornamentLift,
+        ornamentZ * 2
+      ));
     });
   });
   // ---------- ケーキのふちに小さいクリームを並べる ----------
