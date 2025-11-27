@@ -31,9 +31,9 @@ function escapeXml(s) {
     .replaceAll("'", "&apos;");
 }
 
-await fs.mkdir("public", { recursive: true });
+await fs.mkdir("docs", { recursive: true });
 
 await sharp(Buffer.from(svg))
   // ロゴを左上に合成したいならここで composite を追加してもOK
   .png()
-  .toFile(path.join("public", "og.png"));
+  .toFile(path.join("docs", "og.png"));
