@@ -46,7 +46,7 @@ function getRings(rows, cols) {
 function createCreamMesh(height, radius) {
   const group = new THREE.Group();
 
-  const creamMaterial = new THREE.MeshPhongMaterial({
+  const creamMaterial = new THREE.MeshStandardMaterial({
     color: CREAM_COLOR,
     roughness: 0.9,
     metalness: 0.0,
@@ -100,7 +100,7 @@ function updateSceneWithNewTexture(scene) {
   creams    = [];
 
   const cakeGeometry = new THREE.CylinderGeometry(CAKE_RADIUS, CAKE_RADIUS, CAKE_HEIGHT, 32);
-  const cakeMaterial = new THREE.MeshPhongMaterial({
+  const cakeMaterial = new THREE.MeshStandardMaterial({
     color: CAKE_COLOR,
     roughness: 0.92,
     metalness: 0.0,
@@ -263,7 +263,7 @@ function createCandleGroup() {
   const bodyHeight = 0.8;
   const bodyRadius = 0.08;
   const bodyGeo = new THREE.CylinderGeometry(bodyRadius, bodyRadius, bodyHeight, 8);
-  const bodyMat = new THREE.MeshPhongMaterial({ color: CANDLE_COLOR });
+  const bodyMat = new THREE.MeshStandardMaterial({ color: CANDLE_COLOR });
   const body = new THREE.Mesh(bodyGeo, bodyMat);
   body.position.y = bodyHeight / 2;
   group.add(body);
