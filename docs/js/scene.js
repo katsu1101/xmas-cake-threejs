@@ -110,7 +110,10 @@ function updateSceneWithNewTexture(scene) {
 
   for (let row = 0; row < GRID_ROWS; row++) {
     for (let col = 0; col < GRID_COLS; col++) {
-      const geo = new THREE.PlaneGeometry(0.8, 0.8);
+      const size =
+        ( (row + 1 )=== (GRID_ROWS + 1) / 2 && (col + 1 )=== (GRID_COLS + 1)/ 2)
+          ? 2 : 0.8;
+      const geo = new THREE.PlaneGeometry(size, size);
       const mat = new THREE.MeshBasicMaterial({
         side: THREE.DoubleSide,
         alphaTest: 0.5,
@@ -181,7 +184,7 @@ function positionOrnamentsOnCake() {
 
     const creamHeight = 0.35 + t * 0.5;
     const creamRadius = 0.35 + t * 0.1;
-    const ornamentLift = 0.15 + t * 0.2;
+    const ornamentLift = 0.15 + t * 0.2 + (isLast ? 0.7 : 0);
 
     // 最後のリングが 1 マスだけ → 中央
     if (isLast && count === 1) {

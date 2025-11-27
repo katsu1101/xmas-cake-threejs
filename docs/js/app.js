@@ -33,6 +33,8 @@ function initThree() {
   controls.autoRotateSpeed = -0.15;
   controls.enablePan     = false;
   controls.target.set(0, 0.5, 0);
+  controls.rotateSpeed = 0.2;   // 回転速度 デフォルト 1.0
+  controls.zoomSpeed = 0.5;     // ズーム速度 デフォルト 1.0
   controls.update();
 
   scene = new THREE.Scene();
